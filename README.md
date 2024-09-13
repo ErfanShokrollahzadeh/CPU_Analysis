@@ -46,3 +46,34 @@ Finally, the script prints the returned dictionary to the console.
 
 Usage
 To run the script, simply execute the main.py file in your Python environment. The output will be printed to the console.
+
+Setup Instructions
+1. Clone the repository:
+   ```
+   git clone https://github.com/ErfanShokrollahzadeh/CPU_Analysis.git
+   cd CPU_Analysis
+   ```
+2. Create a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate   # On Windows use `venv\Scripts\activate`
+   ```
+3. Install the dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+4. Run the script:
+   ```
+   python main.py
+   ```
+
+Requirements
+- Python 3.9 or higher
+- psutil library
+
+Project Description
+This project is a system resource monitor that uses the psutil library to gather information about CPU usage, memory usage, disk usage, and network activity. The script provides a simple way to monitor these system resources and can be used for performance monitoring and analysis.
+
+Technologies Used
+- Python
+- psutil library
