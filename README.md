@@ -46,3 +46,15 @@ Finally, the script prints the returned dictionary to the console.
 
 Usage
 To run the script, simply execute the main.py file in your Python environment. The output will be printed to the console.
+
+CI/CD Pipeline
+This project uses a CI/CD pipeline defined in the `.github/workflows/ci-cd.yml` file. The pipeline is triggered on push and pull requests to the `master` branch.
+
+Pipeline Steps:
+1. **Install Dependencies**: The pipeline installs the required dependencies using pip.
+2. **Run Tests**: The pipeline runs tests using pytest to ensure the code is working correctly.
+3. **Lint Code**: The pipeline lints the code using flake8 to ensure code quality.
+4. **Deploy**: The pipeline deploys the project.
+
+Triggering the Pipeline:
+The pipeline is automatically triggered on push and pull requests to the `master` branch. You can also manually trigger the pipeline from the GitHub Actions tab in your repository.
