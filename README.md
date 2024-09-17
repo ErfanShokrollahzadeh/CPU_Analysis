@@ -1,53 +1,57 @@
-System Resource Monitor
+# System Resource Monitor
+
 This Python script uses the psutil library to monitor system resources such as CPU usage, memory usage, disk usage, and network activity.
 
+## Table of Contents
+- [Description](#description)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Description
+
+The script starts by importing the psutil library, which provides an interface for retrieving information on running processes and system utilization (CPU, memory, disks, network, sensors) in Python.
+
+```python
 import psutil
-
-The script starts by importing the psutil library, which provides an interface for retrieving information on running processes and
-system utilization (CPU, memory, disks, network, sensors) in Python.
-
-def get_cpu_usage():
+```
 
 This function retrieves and returns the current CPU usage, memory usage, disk usage, and network activity.
 
-cpu_usage = psutil.cpu_percent(interval=1)
-
-This line gets the CPU usage percentage over an interval of 1 second.
-
-memory_info = psutil.virtual_memory()
-memory_usage = memory_info.percent
-
-These lines get the system's virtual memory usage in percentage.
-
-disk_info = psutil.disk_usage('/')
-disk_usage = disk_info.percent
-
-These lines get the disk usage of the root directory in percentage.
-
-net_info = psutil.net_io_counters()
-net_sent = net_info.bytes_sent
-net_recv = net_info.bytes_recv
-
-These lines get the number of bytes sent and received over the network.
-
-return {
-    "cpu_usage": cpu_usage,
-    "memory_usage": memory_usage,
-    "disk_usage": disk_usage,
-    "net_sent": net_sent,
-    "net_recv": net_recv
-}
-
-The function returns a dictionary containing all the gathered information.
-
-print(get_cpu_usage())
+```python
+def get_cpu_usage():
+    cpu_usage = psutil.cpu_percent(interval=1)
+    memory_info = psutil.virtual_memory()
+    memory_usage = memory_info.percent
+    disk_info = psutil.disk_usage('/')
+    disk_usage = disk_info.percent
+    net_info = psutil.net_io_counters()
+    net_sent = net_info.bytes_sent
+    net_recv = net_info.bytes_recv
+    return {
+        "cpu_usage": cpu_usage,
+        "memory_usage": memory_usage,
+        "disk_usage": disk_usage,
+        "net_sent": net_sent,
+        "net_recv": net_recv
+    }
+```
 
 Finally, the script prints the returned dictionary to the console.
 
-Usage
-To run the script, simply execute the main.py file in your Python environment. The output will be printed to the console.
+```python
+print(get_cpu_usage())
+```
 
-Setup Instructions
+## Prerequisites
+
+- Python 3.9 or higher
+- psutil library
+
+## Installation
+
 1. Clone the repository:
    ```
    git clone https://github.com/ErfanShokrollahzadeh/CPU_Analysis.git
@@ -62,26 +66,17 @@ Setup Instructions
    ```
    pip install -r requirements.txt
    ```
-4. Run the script:
-   ```
-   python main.py
-   ```
 
-Requirements
-- Python 3.9 or higher
-- psutil library
+## Usage
 
-Project Description
-This project is a system resource monitor that uses the psutil library to gather information about CPU usage, memory usage, disk usage, and network activity. The script provides a simple way to monitor these system resources and can be used for performance monitoring and analysis.
+To run the script, simply execute the main.py file in your Python environment. The output will be printed to the console.
 
-Technologies Used
-- Python
-- psutil library
+```bash
+python main.py
+```
 
-CI/CD Setup
-This project uses GitHub Actions for Continuous Integration and Continuous Deployment (CI/CD). The workflow is defined in the `.github/workflows/python-package.yml` file. The workflow installs Python dependencies, runs tests, and lints with a variety of Python versions. It is triggered on push and pull request events to the `master` branch.
+## Contributing
 
-Contributing
 We welcome contributions to this project! If you would like to contribute, please follow these guidelines:
 
 1. Fork the repository and create your branch from `master`.
@@ -89,3 +84,7 @@ We welcome contributions to this project! If you would like to contribute, pleas
 3. Ensure the test suite passes.
 4. Make sure your code lints.
 5. Create a pull request and describe the changes you have made.
+
+## License
+
+This project is licensed under the MIT License.
