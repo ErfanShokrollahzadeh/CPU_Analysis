@@ -77,3 +77,15 @@ This project is a system resource monitor that uses the psutil library to gather
 Technologies Used
 - Python
 - psutil library
+
+CI/CD Setup
+This project uses GitHub Actions for Continuous Integration and Continuous Deployment (CI/CD). The workflow is defined in the `.github/workflows/python-package.yml` file. The workflow installs Python dependencies, runs tests, and lints with a variety of Python versions. It is triggered on push and pull request events to the `master` branch.
+
+Contributing
+We welcome contributions to this project! If you would like to contribute, please follow these guidelines:
+
+1. Fork the repository and create your branch from `master`.
+2. If you have added code that should be tested, add tests.
+3. Ensure the test suite passes.
+4. Make sure your code lints.
+5. Create a pull request and describe the changes you have made.
